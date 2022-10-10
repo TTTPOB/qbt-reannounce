@@ -5,13 +5,13 @@ use std::time::SystemTime;
 
 #[derive(Parser, Debug)]
 struct Args {
-    #[clap(short, long)]
+    #[clap(short, long, env("QBT_REANNOUNCE_SERVER_URL"))]
     server_url: String,
-    #[clap(long)]
+    #[clap(short('w'), long, env("QBT_REANNOUNCE_ONLY_WITHIN"))]
     only_within: String,
-    #[clap(short, long)]
+    #[clap(short, long, env("QBT_REANNOUNCE_USERNAME"))]
     username: String,
-    #[clap(short, long)]
+    #[clap(short, long, env("QBT_REANNOUNCE_PASSWORD"))]
     password: String,
 }
 
